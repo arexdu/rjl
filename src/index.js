@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from './component/Header';
 
 const App = (props) => {
     return (
-        <h2>
-            {props.hdMessage}
-        </h2>
+        <div className="App">
+            <Header message="Naming Module!"/>
+            <div>
+                ...
+            </div>
+        </div>
+
     )
 };
 
-App.propTypes = {
-    hdMessage: React.PropTypes.string
-};
-
-App.defaultProps = {
-    hdMessage: 'Hello RJL!'
-}
 
 ReactDOM.render(
     <App />,
