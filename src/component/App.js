@@ -8,13 +8,11 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        console.log('did mount');
-        debugger;
+//Timer
     }
 
     componentWillUnmount() {
-        console.log('will unmount');
-        debugger;
+//Delete Timer
     }
 
     render() {
