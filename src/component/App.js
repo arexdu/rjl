@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from './Header';
+import ContestPreview from './ContestPreview';
 
 class App extends React.Component {
     state = {
-        test : 23,
         pageHeader: 'Naming Contents'
     };
 
     componentDidMount() {
-//Timer
+//Timer, listeners
     }
 
     componentWillUnmount() {
-//Delete Timer
+//clean timers, listeners
     }
 
     render() {
@@ -20,7 +20,7 @@ class App extends React.Component {
             <div className="App">
                 <Header message={this.state.pageHeader}/>
                 <div>
-                    {this.state.test}
+                    <ContestPreview {...this.props.contest[0]}/>
                 </div>
             </div>
         )
