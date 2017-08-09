@@ -1,19 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './component/Header';
-
-const App = (props) => {
-    return (
-        <div className="App">
-            <Header message="Naming Module!"/>
-            <div>
-                ...
-            </div>
-        </div>
-
-    )
-};
-
+import App from './component/App';
 
 ReactDOM.render(
     <App />,
