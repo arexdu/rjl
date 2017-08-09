@@ -7,6 +7,16 @@ class App extends React.Component {
         pageHeader: 'Naming Contents'
     };
 
+    componentDidMount() {
+        console.log('did mount');
+        debugger;
+    }
+
+    componentWillUnmount() {
+        console.log('will unmount');
+        debugger;
+    }
+
     render() {
         return (
             <div className="App">
