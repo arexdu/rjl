@@ -2,14 +2,15 @@ import React from 'react';
 import Header from './Header';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { test : 123 };
-    }
+    state = {
+        test : 23,
+        pageHeader: 'Naming Contents'
+    };
+
     render() {
         return (
             <div className="App">
-                <Header message="Naming Contents!"/>
+                <Header message={this.state.pageHeader}/>
                 <div>
                     {this.state.test}
                 </div>
