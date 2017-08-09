@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const value = Math.random();
-const color = value > 0.5 ? 'green' : 'red';
-
-const App = () => {
+const App = (props) => {
     return (
-        <h2 style={{color:color}}>
-            Hello RJL -- {value}
+        <h2>
+            {props.param1}
         </h2>
     )
 }
 
 ReactDOM.render(
-    <App />,
+    <App param1="Hello React Component and props"/>,
     document.getElementById('root')
 );
