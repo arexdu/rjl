@@ -4,12 +4,20 @@ import ReactDOM from 'react-dom';
 const App = (props) => {
     return (
         <h2>
-            {props.param1}
+            {props.hdMessage}
         </h2>
     )
+};
+
+App.propTypes = {
+    hdMessage: React.PropTypes.string
+};
+
+App.defaultProps = {
+    hdMessage: 'Hello RJL!'
 }
 
 ReactDOM.render(
-    <App param1="Hello React Component and props"/>,
+    <App />,
     document.getElementById('root')
 );
