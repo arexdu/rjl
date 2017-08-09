@@ -4,7 +4,15 @@ import ReactDOM from 'react-dom';
 const value = Math.random();
 const color = value > 0.5 ? 'green' : 'red';
 
+const App = () => {
+    return (
+        <h2 style={{color:color}}>
+            Hello RJL -- {value}
+        </h2>
+    )
+}
+
 ReactDOM.render(
-    <h2 style={{color}}> Hello RJL JSX -- {value}</h2>,
+    <App />,
     document.getElementById('root')
 );
