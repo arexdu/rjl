@@ -16,15 +16,18 @@ class App extends React.Component {
     componentDidMount() {
         //Timer, listeners
         //ajax
+        this.fetchContestList();
+        /*
         axios.get('/api/contests')
             .then(resp => {
                 //console.log(resp.data.contests);
                 this.setState({
+                    currentContestId: null,
                     contests: resp.data.contests
                 });
             })
             .catch(console.error)
-
+*/
     }
 
     componentWillUnmount() {
@@ -48,6 +51,20 @@ class App extends React.Component {
         });
     };
 
+    fetchContestList = () => {
+        pushState(
+            { currentContestId: null },
+            '/'
+        );
+        //look up contests
+        api.fetchContestList().then(contests  => {
+            this.setState({
+                currentContestId: null,
+                contests
+            });
+        });
+    };
+
     currentContest() {
         return this.state.contests[this.state.currentContestId];
     }
@@ -61,8 +78,11 @@ class App extends React.Component {
     }
 
     currentContent() {
+        console.log(this.state.currentContestId);
         if (this.state.currentContestId) {
-            return <Contest {...this.currentContest()} />;
+            return <Contest
+                contestListClick={this.fetchContestList}
+                {...this.currentContest()} />;
         }
 
         return <ContestList
@@ -77,7 +97,6 @@ class App extends React.Component {
                 {this.currentContent()}
             </div>
         )
-
     }
 };
 

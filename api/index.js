@@ -13,7 +13,7 @@ router.get('/contests', (req,res) => {
 
 router.get('/contests/:contestId', (req,res) => {
     let contest = data.contests[req.params.contestId - 1];
-    contest.description = 'Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.';
+    contest.description = 'Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.Lorm skd  ldld dsd kasdkf. Kaep kxoe ope. Pkd eopolcm qpdk kxnd. Pkdk enady iwndn.';
     res.send(contest);
 });
 
