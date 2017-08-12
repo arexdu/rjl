@@ -2,36 +2,36 @@ import React from 'react';
 import Header from './Header';
 import ContestList from './ContestList';
 import Contest from './Contest';
-import axios from 'axios';
+//import axios from 'axios';
 import * as api from '../api';
 
 const pushState = (obj, url) =>
     window.history.pushState(obj, '', url);
 
+const onPopState = handler => {
+    window.onpopstate = handler;
+}
+
 class App extends React.Component {
     state = {
         contests: []
-};
+    };
 
     componentDidMount() {
         //Timer, listeners
         //ajax
         this.fetchContestList();
-        /*
-        axios.get('/api/contests')
-            .then(resp => {
-                //console.log(resp.data.contests);
-                this.setState({
-                    currentContestId: null,
-                    contests: resp.data.contests
-                });
-            })
-            .catch(console.error)
-*/
+
+        onPopState((event) => {
+            this.setState({
+                currentContestId: (event.state || {}).currentContestId
+            });
+        });
     }
 
     componentWillUnmount() {
 //clean timers, listeners
+        onPopState(null);
     }
 
     fetchContest = (contestId) => {
@@ -78,7 +78,6 @@ class App extends React.Component {
     }
 
     currentContent() {
-        console.log(this.state.currentContestId);
         if (this.state.currentContestId) {
             return <Contest
                 contestListClick={this.fetchContestList}

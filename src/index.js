@@ -4,7 +4,7 @@ import App from './component/App';
 
 
 ReactDOM.render(
-    <App />,
+    <App initialData={window.initialData} />,
     document.getElementById('root')
 );
 
