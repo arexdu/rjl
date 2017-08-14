@@ -7,8 +7,6 @@ import path from 'path';
 
 const server = express();
 
-global.apiurl = config.apiurl;
-
 server.use(sassMiddleware({
     src: path.join(__dirname, 'sass'),
     dest: path.join(__dirname, 'public')
